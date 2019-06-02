@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Product Sans;
+    src: url("./Fonts/Product Sans Regular.ttf");
+}
+
+html {
+    font-family: Product Sans;
+}

@@ -1,0 +1,50 @@
+.title {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.title img{
+    vertical-align: middle;
+}
+
+
+.title span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+}
+
+.subtitle-text span {
+    float: right;
+    margin-right: 10px;
+    font-size: 15px;
+    /* padding-bottom: 10px; */
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar li a:hover {
+    color: black;
+    background-color: white;
+    transition: 0.5s;
+}

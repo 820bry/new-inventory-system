@@ -1,0 +1,87 @@
+.page-body {
+    position: fixed;
+    background-image: url("./Images/backdrop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 1s;
+}
+
+.page-content {
+    background-color: rgba(140, 140, 140, 0.78);
+    padding-top: 20px;
+    padding-left: 70px;
+    padding-right: 80px;
+    margin-right: 820px;
+}
+
+.login-content {
+    text-align: center;
+    padding-top: 80px;
+    z-index: -1;
+    opacity: 0;
+    transition: 1s;
+}
+
+.login-content.show {
+    z-index: 1;
+    opacity: 1;
+    transition: 1s;
+}
+
+.register-content {
+    position: absolute;
+    text-align: center;
+    width: 28%;
+    top: 29.5%;
+    z-index: -1;
+    opacity: 0;
+    transition: 1s;
+}
+
+.register-content.show {
+    z-index: 1;
+    opacity: 1;
+    transition: 1s;
+}
+
+.login-form label,
+.register-form label {
+    font-size: 17px;
+}
+
+.login-form input[type=text], .login-form input[type=password],
+.register-form input[type=text], .register-form input[type=password] {
+    width: 95%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.login-form input[type=text]:hover, .login-form input[type=password]:hover,
+.register-form input[type=text]:hover, .register-form input[type=password]:hover {
+    background-color: #d9d9d9;
+}
+
+.login-form input[type=submit],
+.register-form input[type=submit] {
+    width: 35%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.login-form input[type=submit]:hover,
+.register-form input[type=submit]:hover {
+    background-color: #b3b3b3;
+}
+
+.page-footer {
+    padding-top: 227px;
+    padding-bottom: 7px;
+    font-size: 13px;
+}
