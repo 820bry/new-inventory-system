@@ -35,6 +35,18 @@
     color: white;
 }
 
+.inventory-listing button {
+    border: none;
+    border-radius: 3px;
+    margin: 3px 0;
+    height: 20px;
+    cursor: pointer;
+}
+
+.inventory-listing button:hover {
+    background-color: #b3b3b3;
+}
+ 
 .add-item-window {
     display: none;
     position: fixed;
@@ -86,4 +98,17 @@
 
 .add-item-form input[type=text]:hover, .add-item-form input[type=number]:hover {
     background-color: #d9d9d9;
+}
+
+.add-item-form input[type=submit] {
+    width: 35%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.add-item-form input[type=submit]:hover {
+    background-color: #b3b3b3;
 }
