@@ -38,8 +38,8 @@
         <br>
         <ul class="navbar">
             <!-- Just placeholders -->
-            <li><a href="https://google.com">Google</a></li>
-            <li><a href="https://bing.com">Bing</a></li>
+            <li><a href="../main/main.php?session=<?php echo $_GET['session']; ?>">Main Page</a></li>
+            <li><a href="../main/inventory.php?session=<?php echo $_GET['session']; ?>">Inventory</a></li>
             <li style="float: right"><a href="../login.php">Logout</a></li>
         </ul>
     </body>

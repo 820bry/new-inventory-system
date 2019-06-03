@@ -1,0 +1,36 @@
+.btn-add {
+    width: 110px;
+    height: 40px;
+    font-size: 15px;
+    font-family: Product Sans;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 14px;
+    float: right;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: lightgray;
+}
+
+.inventory-listing {
+    border-collapse: collapse;
+    width: 100%;
+    padding-left: 100px;
+}
+
+.inventory-listing td, .inventory-listing th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.inventory-listing th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: black;
+    color: white;
+}
