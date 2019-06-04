@@ -1,3 +1,6 @@
+<?php
+require_once('banner.php');
+?>
 <html>
     <head>
         <title>Inventory | Inventory System</title>
@@ -22,9 +25,7 @@
                 </form>
             </div>
         </div>
-        <?php
-        require_once('banner.php');
-        ?>
+        
         <div class="page-content">
             <h2>Inventory</h2>
             <button id="btn-add" class="btn-add">Add Item</button>
