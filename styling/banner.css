@@ -40,11 +40,11 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .navbar li a:hover {
     color: black;
     background-color: white;
-    transition: 0.5s;
+    transition: 0.2s;
 }

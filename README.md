@@ -4,7 +4,7 @@
 - Redo Login page (because it's terrible)
 - Inventory management
 - ~~Register items~~
-- Update item info
+- ~~Update item info~~
 - Item reporting
 - ~~Deleting items~~
 

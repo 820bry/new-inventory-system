@@ -1,0 +1,30 @@
+.update-item-form {
+    margin-left: 30px;
+    margin-right: 900px;
+}
+
+.update-item-form input[type=text], .update-item-form input[type=number] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.update-item-form input[type=text]:hover, .update-item-form input[type=number]:hover {
+    background-color: #d9d9d9;;
+}
+
+.update-item-form input[type=submit] {
+    width: 35%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.update-item-form input[type=submit]:hover {
+    background-color: #b3b3b3;
+}

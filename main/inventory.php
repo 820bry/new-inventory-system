@@ -56,7 +56,7 @@ require_once('banner.php');
                             <td>".getUsername($row['UserRegistered'], $con)."</td>
                             <td>".$row['DateRegistered']."</td>
                             <td>
-                                <button>Update Item</button>
+                                <button onclick=\"window.location = 'update.php?session=".$_GET['session']."&ItemID=".$row['ItemID']."'\"'>Update Item</button>
                                 <button onclick=\"confirmDelete('".$row['ItemID']."');\">Delete Item</button>
                             </td>
                         <tr>";

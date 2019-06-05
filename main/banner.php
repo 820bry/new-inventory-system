@@ -41,6 +41,7 @@
                 <!-- Just placeholders -->
                 <li><a href="../main/main.php?session=<?php echo $_GET['session']; ?>">Main Page</a></li>
                 <li><a href="../main/inventory.php?session=<?php echo $_GET['session']; ?>">Inventory</a></li>
+                <li><a href="../main/report.php?session=<?php echo $_GET['session']; ?>">Report Damage</a></li>
                 <li style="float: right"><a href="../login.php">Logout</a></li>
             </ul>
         </div>
