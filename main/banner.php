@@ -5,6 +5,9 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/universal.css">
         <link rel="stylesheet" href="../styling/banner.css">
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div class="banner-content">

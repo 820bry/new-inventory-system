@@ -1,0 +1,63 @@
+.report-item-form {
+    margin-left: 30px;
+    margin-right: 80px;
+}
+
+.report-item-form select {
+    width: 30%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: 1px solid;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.form-section.disabled label, .form-section.disabled select, .form-section.disabled input[type=text],
+.form-section.disabled input[type=number], .form-section.disabled input[type=submit], .form-section.disabled textarea {
+    border-color: #cccccc;
+    color: #cccccc;
+    pointer-events: none;
+}
+
+.report-item-form input[type=text], .report-item-form textarea, .report-item-form input[type=number] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: 1px solid;
+    border-radius: 14px;
+    box-sizing: border-box;
+
+    resize: none;
+    font-family: Product Sans;
+    font-size: 23px;
+}
+
+.report-item-form select:hover, .report-item-form input[type=text]:hover, .report-item-form textarea:hover, .report-item-form input[type=number]:hover {
+    background-color: #d9d9d9;
+}
+
+.report-item-form input[type=number] {
+    width: 20%;
+}
+
+.report-item-form input[type=submit] {
+    float: right;
+    width: 20%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.report-item-form input[type=submit]:hover {
+    background: #b3b3b3;
+}
+
+.report-item-form .mini-text {
+    float: right;
+    font-size: 14px;
+    font-style: italic;
+    color: grey;
+    margin-left: 10px;
+}
