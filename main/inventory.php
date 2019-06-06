@@ -38,6 +38,7 @@ require_once('banner.php');
                         <th width=\"8%\">Item ID</th>
                         <th width=\"40%\">Name</th>
                         <th width=\"5%\">Quantity</th>
+                        <th>Reports</th>
                         <th>Registered By</th>
                         <th width=\"10%\">Added On</th>
                         <th width=\"10%\">Manage</th>
@@ -53,6 +54,9 @@ require_once('banner.php');
                             <td>".$row['ItemID']."</td>
                             <td>".$row['ItemName']."</td>
                             <td>".$row['ItemQuantity']."</td>
+                            <td><ul>";
+                            getReports($con, $row['ItemID']);
+                            echo "</ul></td>
                             <td>".getUsername($row['UserRegistered'], $con)."</td>
                             <td>".$row['DateRegistered']."</td>
                             <td>
@@ -75,6 +79,20 @@ require_once('banner.php');
                         }
                     } else {
                         return "Invalid Username";
+                    }
+                }
+
+                function getReports($con, $id) {
+                    $sql = "SELECT * FROM damage WHERE DamageItem = '$id'";
+                    $result = mysqli_query($con, $sql);
+
+                    if(mysqli_num_rows($result) != 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<li>".$row['ReportTitle']."</li>";
+                        }
+                    } else {
+                        // no reports
+                        echo "No reports.";
                     }
                 }
                 ?>

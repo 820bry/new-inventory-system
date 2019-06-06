@@ -13,7 +13,7 @@ require_once('banner.php');
     <body>
         <div class="page-content">
             <h2>Inventory > Report Item Damage</h2>
-            <form class="report-item-form">
+            <form class="report-item-form" action="report-item-process.php?session=<?php echo $_GET['session'];?>" method="post">
                 <label for="dropdown">Select affected item</label><br>
                 <select name="dropdown" id="dropdown" onchange="update()">
                     <option value="null" style="color: lightgray;" disabled selected>-- Select an item --</option>
