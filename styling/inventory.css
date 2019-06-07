@@ -28,6 +28,11 @@
     text-align: center;
 }
 
+.inventory-listing .report-data {
+    text-align: left;
+    margin: 0;
+}
+
 .inventory-listing th {
     padding-top: 12px;
     padding-bottom: 12px;

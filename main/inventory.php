@@ -36,10 +36,10 @@ require_once('banner.php');
                 echo "
                     <tr>
                         <th width=\"8%\">Item ID</th>
-                        <th width=\"40%\">Name</th>
+                        <th width=\"25%\">Name</th>
                         <th width=\"5%\">Quantity</th>
-                        <th>Reports</th>
-                        <th>Registered By</th>
+                        <th width=\"25%\">Reports</th>
+                        <th width=\"15%\">Registered By</th>
                         <th width=\"10%\">Added On</th>
                         <th width=\"10%\">Manage</th>
                     </tr>";
@@ -54,7 +54,7 @@ require_once('banner.php');
                             <td>".$row['ItemID']."</td>
                             <td>".$row['ItemName']."</td>
                             <td>".$row['ItemQuantity']."</td>
-                            <td><ul>";
+                            <td><ul class=\"report-data\">";
                             getReports($con, $row['ItemID']);
                             echo "</ul></td>
                             <td>".getUsername($row['UserRegistered'], $con)."</td>
@@ -88,7 +88,7 @@ require_once('banner.php');
 
                     if(mysqli_num_rows($result) != 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<li>".$row['ReportTitle']."</li>";
+                            echo "<li><a href=\"view-report.php?session=".$_GET['session']."&ReportID=".$row['ReportID']."\">".$row['ReportTitle']."</li>";
                         }
                     } else {
                         // no reports
