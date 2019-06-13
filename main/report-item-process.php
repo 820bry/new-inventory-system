@@ -26,6 +26,7 @@ if(empty($_GET['session'])) {
         window.location = 'inventory.php?session=".$_GET['session']."';
         </script>";
     } else {
+        echo $sql;
         echo "<script>
         window.alert('Failed to add report');
         window.history.back();

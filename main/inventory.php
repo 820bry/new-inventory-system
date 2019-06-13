@@ -28,6 +28,8 @@ require_once('banner.php');
         
         <div class="page-content">
             <h2>Inventory</h2>
+            <button id ="btn-search" class="btn-search">Search Inventory</button>
+            <button id="btn-import" class="btn-import">Import Table Data</button>
             <button id="btn-add" class="btn-add">Add Item</button>
             <table class="inventory-listing">
                 <?php

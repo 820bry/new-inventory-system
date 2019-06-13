@@ -15,11 +15,29 @@ if($result) {
         $title = $row['ReportTitle'];
         $desc = $row['ReportDesc'];
         $quantity = $row['DamageQuantity'];
-
+        $uid = $row['ReportedBy'];
     }
 } else {
-
+    echo "<script>
+    window.alert('Report not found.');
+    window.history.back();
+    </script>";
 }
+
+function getUser($con, $uid) {
+    $sql = "SELECT UserName FROM users WHERE UserID = '$uid'";
+    $result = mysqli_query($con, $sql);
+
+    if($result) {
+        while($row = $result->fetch_assoc()) {
+            return $row['UserName'];
+        }
+    } else {
+        // failed to find username
+        return "User reported not found.";
+    }
+}
+
 ?>
 
 <html>
@@ -40,7 +58,7 @@ if($result) {
                 </tr>
                 <tr>
                     <th>Reported By</th>
-                    <td>lalala</td>
+                    <td><?php getUser($con, $uid); ?></td>
                 </tr>
                 <tr>
                     <th>Report Description</th>
