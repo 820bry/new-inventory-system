@@ -1,4 +1,15 @@
-.btn-add, .btn-search, .btn-import {
+.search {
+    float: left;
+    width: 20%;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 14px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.btn-add, .btn-import {
     width: 110px;
     height: 40px;
     font-size: 15px;
@@ -13,8 +24,15 @@
 }
 
 .btn-search {
-    width: 150px;
+    width: 45px;
     float: left;
+    height: 40px;
+    font-size: 15px;
+    font-family: Product Sans;
+    border: none;
+    border-radius: 14px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .btn-import {
