@@ -30,7 +30,6 @@ require_once('banner.php');
             <h2>Inventory</h2>
             <input type="text" id="search-bar" name="search_bar" class="search" placeholder="Enter Search Term">
             <button id ="btn-search" class="btn-search" onclick="search()">&#128270</button>
-            <button id="btn-import" class="btn-import">Import Table Data</button>
             <button id="btn-add" class="btn-add">Add Item</button>
             <table class="inventory-listing">
                 <?php

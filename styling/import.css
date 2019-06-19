@@ -1,0 +1,30 @@
+.import-data-form {
+    padding-left: 12px;
+    margin-right: 70px;
+}
+
+.import-data-form input[type=file] {
+    width: 30%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.import-data-form input[type=file]:hover {
+    background-color: #d9d9d9;
+}
+
+.import-data-form input[type=submit] {
+    width: 10%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.import-data-form input[type=submit]:hover {
+    background-color: #b3b3b3;
+}
