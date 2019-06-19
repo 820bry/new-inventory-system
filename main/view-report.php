@@ -15,6 +15,7 @@ if($result) {
         $title = $row['ReportTitle'];
         $desc = $row['ReportDesc'];
         $quantity = $row['DamageQuantity'];
+        $itemid = $row['DamageItem'];
         $uid = $row['ReportedBy'];
     }
 } else {
@@ -28,13 +29,26 @@ function getUser($con, $uid) {
     $sql = "SELECT UserName FROM users WHERE UserID = '$uid'";
     $result = mysqli_query($con, $sql);
 
-    if($result) {
+    if(mysqli_num_rows($result) != 0) {
         while($row = $result->fetch_assoc()) {
             return $row['UserName'];
         }
     } else {
         // failed to find username
         return "User reported not found.";
+    }
+}
+
+function getItemName($con, $itemid) {
+    $sql = "SELECT * FROM inventory WHERE ItemID = '$itemid'";
+    $result = mysqli_query($con, $sql);
+
+    if(mysqli_num_rows($result) != 0) {
+        while($row = $result->fetch_assoc()) {
+            return $row['ItemName'];
+        }
+    } else {
+        return "Item not found.";
     }
 }
 
@@ -58,15 +72,15 @@ function getUser($con, $uid) {
                 </tr>
                 <tr>
                     <th>Reported By</th>
-                    <td><?php getUser($con, $uid); ?></td>
+                    <td><?php echo getUser($con, $uid)." [ ".$uid." ]"; ?></td>
                 </tr>
-                <tr>
+                <tr class="desc">
                     <th>Report Description</th>
-                    <td><?php echo $desc; ?></td>
+                    <td><?php echo $desc; ?> </td>
                 </tr>
                 <tr>
                     <th>Affected Item</th>
-                    <td>lalala</td>
+                    <td><?php echo getItemName($con, $itemid)." [ ".$itemid." ] "; ?></td>
                 </tr>
                 <tr>
                     <th>Affected Amount</th>

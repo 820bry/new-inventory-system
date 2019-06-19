@@ -1,6 +1,6 @@
 .report-table {
     border-collapse: collapse;
-    width: 70%;
+    width: 63%;
     padding-left: 50px;
     margin-right: 30px;
 }
@@ -9,6 +9,7 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    padding-bottom: 18px;
 }
 
 .report-table th {
