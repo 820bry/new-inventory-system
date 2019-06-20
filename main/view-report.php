@@ -64,7 +64,7 @@ function getItemName($con, $itemid) {
     </head>
     <body>
         <div class="page-content">
-            <div class="report-data">
+            <div id="report-data">
                 <h2>Inventory > View Report</h2>
                 <table class="report-table">
                     <tr>
@@ -90,12 +90,18 @@ function getItemName($con, $itemid) {
                 </table>
             </div>
             <br>
-            <button class="btn-print" id="btn-print" onclick="window.print()">Print Report</button>
+            <button class="btn-print" id="btn-print">Print Report</button>
         </div>
     </body>
     <script>
-        function print() {
+        var button = document.getElementById("btn-print");
+
+        button.onclick = function() {
+            var restorepage = $('body').html();
+            var printcontent = $('#report-data').clone();
+            $('body').empty().html(printcontent);
             window.print();
+            $('body').html(restorepage);
         }
     </script>
 </html>
