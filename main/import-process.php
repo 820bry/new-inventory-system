@@ -25,7 +25,7 @@ if($_FILES['import_file']['size'] > 0) {
 
             echo "<script>
             window.alert('Successfully imported data');
-            window.location = inventory.php?session=".$session.";
+            window.location = 'inventory.php?session=".$session."';
             </script>";
         }
     }

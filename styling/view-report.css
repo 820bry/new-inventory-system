@@ -15,3 +15,17 @@
 .report-table th {
     width: 28%;
 }
+
+.btn-print {
+    
+    width: 130px;
+    height: 40px;
+    font-size: 15px;
+    font-family: Product Sans;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 14px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}

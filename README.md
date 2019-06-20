@@ -7,7 +7,7 @@
 - ~~Update item info~~
 - ~~Item reporting~~
 - ~~Deleting items~~
-- View report
+- ~~View report~~
 - Import CSV (somewhat works)
 - ~~Search inventory~~
 - Print report
@@ -17,4 +17,5 @@
 - ~~Weird positioning thing in inventory.php with the banner and popup window~~
 - ~~Fix formatting for reports row in inventory data~~
 - ~~When you delete an item, you should delete reports with matching item ID as well~~
-- Search doesn't check for whitespaces
+- ~~Search doesn't check for whitespaces~~
+- Importing a CSV file imports a blank datasets

@@ -115,7 +115,7 @@ require_once('banner.php');
         function search() {
             var query = document.getElementById("search-bar").value;
 
-            if(query === "") {
+            if(query === "" || query.trim().length == 0) {
                 window.alert('Please type a search query!');
             } else {
                 window.location = 'search.php?session=<?php echo $_GET['session']; ?>&query='+query;

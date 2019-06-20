@@ -64,31 +64,40 @@ function getItemName($con, $itemid) {
     </head>
     <body>
         <div class="page-content">
-            <h2>Inventory > View Report</h2>
-            <table class="report-table">
-                <tr>
-                    <th>Report Title</th>
-                    <td><?php echo $title; ?></td>
-                </tr>
-                <tr>
-                    <th>Reported By</th>
-                    <td><?php echo getUser($con, $uid)." [ ".$uid." ]"; ?></td>
-                </tr>
-                <tr class="desc">
-                    <th>Report Description</th>
-                    <td><?php echo $desc; ?> </td>
-                </tr>
-                <tr>
-                    <th>Affected Item</th>
-                    <td><?php echo getItemName($con, $itemid)." [ ".$itemid." ] "; ?></td>
-                </tr>
-                <tr>
-                    <th>Affected Amount</th>
-                    <td><?php echo $quantity; ?></td>
-                </tr>
-            </table>
+            <div class="report-data">
+                <h2>Inventory > View Report</h2>
+                <table class="report-table">
+                    <tr>
+                        <th>Report Title</th>
+                        <td><?php echo $title; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Reported By</th>
+                        <td><?php echo getUser($con, $uid)." [ ".$uid." ]"; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Report Description</th>
+                        <td><?php echo $desc; ?> </td>
+                    </tr>
+                    <tr>
+                        <th>Affected Item</th>
+                        <td><?php echo getItemName($con, $itemid)." [ ".$itemid." ] "; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Affected Amount</th>
+                        <td><?php echo $quantity; ?></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <button class="btn-print" id="btn-print" onclick="window.print()">Print Report</button>
         </div>
     </body>
+    <script>
+        function print() {
+            window.print();
+        }
+    </script>
 </html>
 
 <?php
