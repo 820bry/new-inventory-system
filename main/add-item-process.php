@@ -34,9 +34,14 @@ if(empty($name) || empty($quantity)) {
 }
 
 function getNextId($con) {
-    $sql = "SELECT ItemID FROM inventory ORDER BY ItemID DESC";
+    $sql = "SELECT ItemID FROM inventory ORDER BY ItemID DESC LIMIT 1";
     $result = mysqli_query($con, $sql);
     
+    while($row = $result->fetch_assoc()) {
+        $curr_id = $row['ItemID'];
+    }
+
+    return "A".sprintf("%03d",(int)str_replace("A", "", $curr_id) + 1);
 }
 
 ?>

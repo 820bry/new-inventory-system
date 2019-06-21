@@ -13,8 +13,7 @@
     </head>
 
     <body class="page-body">
-        <div class="page-background"></div>
-        <div class="page-content">
+        <center class="page-content">
             <img src="./styling/Images/logoblack.png" alt="logo-bw" width="50px" height="50px">
             <h2>New Inventory System</h2>
             
@@ -61,6 +60,6 @@
             <footer class="page-footer">
                 <center><b>Copyright(C) i-CreatorZ Club | Chung Ling High School Penang</b></center>
             </footer>
-        </div>
+        </center>
     </body>
 </html>

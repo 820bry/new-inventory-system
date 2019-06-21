@@ -18,15 +18,18 @@ if($_FILES['import_file']['size'] > 0) {
         $result = mysqli_query($con, $sql);
 
         if(mysqli_num_rows($result) === 0) {
-            $insert = "INSERT INTO inventory(ItemName, ItemID, ItemQuantity, UserRegistered, DateRegistered)
+            // to prevent it from importing empty datasets
+            if(!empty($data[1])) {
+                $insert = "INSERT INTO inventory(ItemName, ItemID, ItemQuantity, UserRegistered, DateRegistered)
                         VALUES('$data[0]', '$data[1]', '$data[2]', '$session', '$curr_date')";
 
-            mysqli_query($con, $insert);
+                mysqli_query($con, $insert);
 
-            echo "<script>
-            window.alert('Successfully imported data');
-            window.location = 'inventory.php?session=".$session."';
-            </script>";
+                echo "<script>
+                window.alert('Successfully imported data');
+                window.location = 'inventory.php?session=".$session."';
+                </script>";
+            }
         }
     }
     fclose($file);
