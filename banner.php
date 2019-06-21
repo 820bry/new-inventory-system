@@ -19,7 +19,7 @@
                 <span>
                     Logged in as: 
                     <?php
-                    require_once('../dbcon.php');
+                    require_once('dbcon.php');
 
                     $session = $_GET['session'];
                     $sql = "SELECT UserName FROM users WHERE UserID = '$session'";
@@ -42,10 +42,10 @@
             <br>
             <ul class="navbar">
                 <li><a href="../main/main.php?session=<?php echo $_GET['session']; ?>">Main Page</a></li>
-                <li><a href="../main/inventory.php?session=<?php echo $_GET['session']; ?>">Inventory</a></li>
-                <li><a href="../main/import.php?session=<?php echo $_GET['session']; ?>">Import Data</a></li>
-                <li><a href="../main/report.php?session=<?php echo $_GET['session']; ?>">Report Item</a></li>
-                <li style="float: right"><a href="../login.php">Logout</a></li>
+                <li><a href="../inventory/inventory.php?session=<?php echo $_GET['session']; ?>">Inventory</a></li>
+                <li><a href="../import/import.php?session=<?php echo $_GET['session']; ?>">Import Data</a></li>
+                <li><a href="../report/report.php?session=<?php echo $_GET['session']; ?>">Report Item</a></li>
+                <li style="float: right"><a href="../index.php">Logout</a></li>
             </ul>
         </div>
     </body>

@@ -1,41 +1,36 @@
 <?php
-require_once('banner.php');
+include('../banner.php');
+
+$query = $_GET['query'];
+
+if(!isset($_GET['query']) || empty($query)) {
+    echo "<script>window.location = 'inventory.php?session=".$_GET['session']."';</script>";
+}
 ?>
+
 <html>
     <head>
-        <title>Inventory | Inventory System</title>
+        <title>Results for '<?php echo $query; ?>' | Inventory System</title>
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">
-        <link rel="stylesheet" href="../styling/inventory.css">
+        <link rel="stylesheet" href="inventory.css">
     </head>
     <body>
-        <div id="popup-window" class="add-item-window">
-            <div class="add-item-content">
-                <span class="btn-close">&times;</span>
-                <h2>Add New Item into Inventory</h2>
-                <form class="add-item-form" action="add-item-process.php?session=<?php echo $_GET['session']; ?>" method="post">
-                    <label for="add-name">Enter a name</label>
-                    <input type="text" id="add-name" name="item_name" placeholder="Item Name" maxlength="25">
-
-                    <label for="add-quantity">Enter the quantity</label>
-                    <input type="number" id="add-quantity" name="item_quantity" step="1" value="1" min="1" max="999">
-
-                    <input type="submit" value="Add Item">
-                </form>
-            </div>
-        </div>
-    
         <div class="page-content">
-            <h2>Inventory</h2>
-            <input type="text" id="search-bar" name="search_bar" class="search" placeholder="Enter Search Term">
-            <button id ="btn-search" class="btn-search" onclick="search()">&#128270</button>
-            <button id="btn-add" class="btn-add">Add Item</button>
+            <a href="inventory.php?session=<?php echo $_GET['session']; ?>">Go back to inventory</a>
+            <h2>Search results for '<?php echo $query; ?>' </h2>
+            <input type="text" id="search-bar" name="search_bar" class="search" placeholder="Enter Search Term" value="<?php echo $query; ?>">
+            <button id ="btn-search" class="btn-search" onclick="search()">&#128270</button><br><br><br>
             <table class="inventory-listing">
-                <?php
+            <?php
                 require_once('../dbcon.php');
 
-                echo "
+                $sql =  "SELECT * FROM inventory WHERE ItemName LIKE '%$query%'";
+                $result = mysqli_query($con, $sql);
+
+                if(mysqli_num_rows($result) != 0) {
+                    echo "
                     <tr>
                         <th width=\"8%\">Item ID</th>
                         <th width=\"25%\">Name</th>
@@ -45,11 +40,6 @@ require_once('banner.php');
                         <th width=\"10%\">Added On</th>
                         <th width=\"10%\">Manage</th>
                     </tr>";
-
-                $sql = "SELECT * FROM inventory";
-                $result = mysqli_query($con, $sql);
-
-                if(mysqli_num_rows($result) >= 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "
                         <tr>
@@ -68,13 +58,12 @@ require_once('banner.php');
                         <tr>";
                     }
                 } else {
-                    echo "Error in fetching inventory data";
+                    echo "No results.";
                 }
 
                 function getUsername($id, $con) {
                     $sql = "SELECT UserName FROM users WHERE UserID = '$id'";
                     $result = mysqli_query($con, $sql);
-
                     if(mysqli_num_rows($result) != 0) {
                         while($row = $result->fetch_assoc()) {
                             return $row['UserName'];
@@ -83,11 +72,9 @@ require_once('banner.php');
                         return "Invalid Username";
                     }
                 }
-
                 function getReports($con, $id) {
                     $sql = "SELECT * FROM damage WHERE DamageItem = '$id'";
                     $result = mysqli_query($con, $sql);
-
                     if(mysqli_num_rows($result) != 0) {
                         while($row = $result->fetch_assoc()) {
                             echo "<li><a href=\"view-report.php?session=".$_GET['session']."&ReportID=".$row['ReportID']."\">".$row['ReportTitle']."</li>";
@@ -99,31 +86,21 @@ require_once('banner.php');
                 }
                 ?>
             </table>
-            
         </div>
     </body>
-    <script src="../scripts/inventory.js"></script>
     <script>
-        function confirmDelete(id) {
-            if(confirm("Are you sure you want to delete this item?")) {
-                window.location = 'del-item-process.php?session=<?php echo $_GET['session'] ?>&ItemID=' + id;
-            } else {
-                // do nothing
-            }
-        }
+    function search() {
+        var query = document.getElementById("search-bar").value;
 
-        function search() {
-            var query = document.getElementById("search-bar").value;
-
-            if(query === "" || query.trim().length == 0) {
-                window.alert('Please type a search query!');
-            } else {
-                window.location = 'search.php?session=<?php echo $_GET['session']; ?>&query='+query;
-            }
+        if(query === "") {
+            window.alert('Please type a search query!');
+        } else {
+            window.location = 'search.php?session=<?php echo $_GET['session']; ?>&query='+query;
         }
+    }
     </script>
 </html>
 
 <?php
-require_once('footer.html');
+include('../footer.php');
 ?>

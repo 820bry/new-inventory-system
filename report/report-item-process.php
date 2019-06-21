@@ -23,7 +23,7 @@ if(empty($_GET['session'])) {
 
     if($result) {
         echo "<script>
-        window.location = 'inventory.php?session=".$_GET['session']."';
+        window.location = '../inventory/inventory.php?session=".$_GET['session']."';
         </script>";
     } else {
         echo "<script>

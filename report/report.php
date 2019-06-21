@@ -1,5 +1,5 @@
 <?php
-require_once('banner.php');
+include('../banner.php');
 ?>
 
 <html>
@@ -8,7 +8,7 @@ require_once('banner.php');
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">
-        <link rel="stylesheet" href="../styling/report.css">
+        <link rel="stylesheet" href="report.css">
     </head>
     <body>
         <div class="page-content">
@@ -53,5 +53,5 @@ require_once('banner.php');
 </html>
 
 <?php
-require_once('footer.html');
+include('../footer.php');
 ?>

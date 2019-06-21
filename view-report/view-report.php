@@ -1,5 +1,5 @@
 <?php
-require_once('banner.php');
+include('../banner.php');
 ?>
 
 <?php
@@ -60,7 +60,7 @@ function getItemName($con, $itemid) {
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">
-        <link rel="stylesheet" href="../styling/view-report.css">
+        <link rel="stylesheet" href="view-report.css">
     </head>
     <body>
         <div class="page-content">
@@ -107,5 +107,5 @@ function getItemName($con, $itemid) {
 </html>
 
 <?php
-require_once('footer.html');
+include('../footer.php');
 ?>
