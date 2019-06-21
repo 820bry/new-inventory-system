@@ -19,13 +19,13 @@ include('../banner.php');
             $session = $_GET['session'];
             $id = $_GET['ItemID'];
 
-            $sql = "SELECT * FROM inventory WHERE ItemID = '$id'";
+            $sql = "SELECT * FROM peralatan WHERE IDAset = '$id'";
             $result = mysqli_query($con, $sql);
 
             if($result) {
                 while($row = $result->fetch_assoc()) {
-                    $name = $row['ItemName'];
-                    $quantity = $row['ItemQuantity'];
+                    $name = $row['NamaAset'];
+                    $quantity = $row['BilAset'];
                 }
             } else {
                 // ID is empty or something went wrong

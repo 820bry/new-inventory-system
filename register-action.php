@@ -1,7 +1,7 @@
 <?php
 require_once('dbcon.php');
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM pengguna";
 $get_users = mysqli_query($con, $query);
 
 $next_id = "ICRZ".sprintf("%03d", mysqli_num_rows($get_users) + 1);
@@ -24,13 +24,13 @@ if(empty($name) || empty($id) || empty($password) || empty($password2)) {
     </script>";
     return;
 } else {
-    $sql = "INSERT INTO users(UserName, StudentID, UserID, Password)
+    $sql = "INSERT INTO pengguna(Nama, IDSekolah, IDPengguna, KataLaluan)
         VALUES('$name', '$id', '$next_id', '$password')";
     $result = mysqli_query($con, $sql);
 
     if($result) {
         echo "<script>
-        window.location = 'login.php';
+        window.location = 'index.php';
         </script>";
     } else {
         echo "<script>

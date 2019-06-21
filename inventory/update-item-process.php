@@ -7,9 +7,9 @@ $session = $_GET['session'];
 $name = $_POST['item_name'];
 $quantity = $_POST['item_quantity'];
 
-$sql = "UPDATE inventory
-        SET ItemName = '$name', ItemQuantity = '$quantity'
-        WHERE ItemID = '".$_GET['ItemID']."'";
+$sql = "UPDATE peralatan
+        SET NamaAset = '$name', BilAset = '$quantity'
+        WHERE IDAset = '".$_GET['ItemID']."'";
 
 if(empty($name) || empty($quantity)) {
     echo "<script>

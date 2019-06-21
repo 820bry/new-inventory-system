@@ -4,9 +4,9 @@ require_once('../dbcon.php');
 $id = $_GET['ItemID'];
 
 // delete all reports with its ID as well
-mysqli_query($con, "DELETE FROM damage WHERE DamageItem = '$id'");
+mysqli_query($con, "DELETE FROM kerosakan WHERE AsetRosak = '$id'");
 
-$sql = "DELETE FROM inventory WHERE ItemID = '$id'";
+$sql = "DELETE FROM peralatan WHERE IDAset = '$id'";
 $result = mysqli_query($con, $sql);
 
 if($result) {

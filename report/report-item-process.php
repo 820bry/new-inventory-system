@@ -6,7 +6,7 @@ $title = $_POST['report_title'];
 $desc = $_POST['report_desc'];
 $quantity = $_POST['report_quantity'];
 
-$sql = "INSERT INTO damage(ReportID, ReportTitle, ReportDesc, DamageQuantity, DamageItem, ReportedBy)
+$sql = "INSERT INTO kerosakan(IDLaporan, TajukLaporan, Keterangan, BilRosak, AsetRosak, DilaporOleh)
         VALUES('".getNextId($con)."', '$title', '$desc', '$quantity', '$id', '".$_GET['session']."')";
 
 if(empty($_GET['session'])) {
@@ -28,13 +28,13 @@ if(empty($_GET['session'])) {
     } else {
         echo "<script>
         window.alert('Failed to add report');
-        //window.history.back();
+        window.history.back();
         </script>";
     }
 }
 
 function getNextId($con) {
-    $sql = "SELECT * FROM damage";
+    $sql = "SELECT * FROM kerosakan";
     $result = mysqli_query($con, $sql);
 
     return "R".sprintf("%03d", mysqli_num_rows($result) + 1);

@@ -4,7 +4,7 @@ require_once('dbcon.php');
 $id = $_POST['student_id'];
 $password = $_POST['password'];
 
-$sql = "SELECT StudentID, Password FROM users WHERE StudentID = '$id' AND BINARY Password = '$password'";
+$sql = "SELECT IDSekolah, KataLaluan FROM pengguna WHERE IDSekolah = '$id' AND BINARY KataLaluan = '$password'";
 
 $result = mysqli_query($con, $sql);
 
@@ -15,18 +15,18 @@ if(mysqli_num_rows($result) != 0) {
 } else {
     echo "<script>
     window.alert('Login failed');
-    window.location = 'login.php';
+    window.history.back();
     </script>";
 }
 
 function getSessionId($id, $con) {
-    $sql = "SELECT UserID FROM users WHERE StudentID = '$id'";
+    $sql = "SELECT IDPengguna FROM pengguna WHERE IDSekolah = '$id'";
 
     $result = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($result) != 0) {
         while($row = $result->fetch_assoc()) {
-            return $row['UserID'];
+            return $row['IDPengguna'];
         }
     } else {
         // something went wrong here...

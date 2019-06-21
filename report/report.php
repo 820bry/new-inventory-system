@@ -20,7 +20,7 @@ include('../banner.php');
                     <?php
                     require_once('../dbcon.php');
 
-                    $sql = "SELECT DISTINCT ItemName, ItemID, ItemQuantity FROM inventory";
+                    $sql = "SELECT DISTINCT NamaAset, IDAset, BilAset FROM peralatan";
                     $result = mysqli_query($con, $sql);
 
                     while($row = mysqli_fetch_row($result)) {

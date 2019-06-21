@@ -26,7 +26,7 @@ if(!isset($_GET['query']) || empty($query)) {
             <?php
                 require_once('../dbcon.php');
 
-                $sql =  "SELECT * FROM inventory WHERE ItemName LIKE '%$query%'";
+                $sql =  "SELECT * FROM peralatan WHERE NamaAset LIKE '%$query%'";
                 $result = mysqli_query($con, $sql);
 
                 if(mysqli_num_rows($result) != 0) {
@@ -43,17 +43,17 @@ if(!isset($_GET['query']) || empty($query)) {
                     while($row = $result->fetch_assoc()) {
                         echo "
                         <tr>
-                            <td>".$row['ItemID']."</td>
-                            <td>".$row['ItemName']."</td>
-                            <td>".$row['ItemQuantity']."</td>
+                            <td>".$row['IDAset']."</td>
+                            <td>".$row['NamaAset']."</td>
+                            <td>".$row['BilAset']."</td>
                             <td><ul class=\"report-data\">";
-                            getReports($con, $row['ItemID']);
+                            getReports($con, $row['IDAset']);
                             echo "</ul></td>
-                            <td>".getUsername($row['UserRegistered'], $con)."</td>
-                            <td>".$row['DateRegistered']."</td>
+                            <td>".getUsername($row['DidaftarOleh'], $con)."</td>
+                            <td>".$row['DidaftarPada']."</td>
                             <td>
-                                <button onclick=\"window.location = 'update.php?session=".$_GET['session']."&ItemID=".$row['ItemID']."'\"'>Update Item</button>
-                                <button onclick=\"confirmDelete('".$row['ItemID']."');\">Delete Item</button>
+                                <button onclick=\"window.location = 'update.php?session=".$_GET['session']."&ItemID=".$row['IDAset']."'\"'>Update Item</button>
+                                <button onclick=\"confirmDelete('".$row['IDAset']."');\">Delete Item</button>
                             </td>
                         <tr>";
                     }
@@ -62,22 +62,22 @@ if(!isset($_GET['query']) || empty($query)) {
                 }
 
                 function getUsername($id, $con) {
-                    $sql = "SELECT UserName FROM users WHERE UserID = '$id'";
+                    $sql = "SELECT Nama FROM pengguna WHERE IDPengguna = '$id'";
                     $result = mysqli_query($con, $sql);
                     if(mysqli_num_rows($result) != 0) {
                         while($row = $result->fetch_assoc()) {
-                            return $row['UserName'];
+                            return $row['Nama'];
                         }
                     } else {
                         return "Invalid Username";
                     }
                 }
                 function getReports($con, $id) {
-                    $sql = "SELECT * FROM damage WHERE DamageItem = '$id'";
+                    $sql = "SELECT * FROM kerosakan WHERE AsetRosak = '$id'";
                     $result = mysqli_query($con, $sql);
                     if(mysqli_num_rows($result) != 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<li><a href=\"view-report.php?session=".$_GET['session']."&ReportID=".$row['ReportID']."\">".$row['ReportTitle']."</li>";
+                            echo "<li><a href=\"view-report.php?session=".$_GET['session']."&ReportID=".$row['IDLaporan']."\">".$row['TajukLaporan']."</li>";
                         }
                     } else {
                         // no reports

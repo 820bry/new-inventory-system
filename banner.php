@@ -22,18 +22,18 @@
                     require_once('dbcon.php');
 
                     $session = $_GET['session'];
-                    $sql = "SELECT UserName FROM users WHERE UserID = '$session'";
+                    $sql = "SELECT Nama FROM pengguna WHERE IDPengguna = '$session'";
                     $result = mysqli_query($con, $sql);
 
                     if(mysqli_num_rows($result) != 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<b>".$row['UserName']."</b>";
+                            echo "<b>".$row['Nama']."</b>";
                         }
                     } else {
                         // user accessed the site without logging in / session was invalid
                         echo "<script>
                         window.alert('Invalid Session');
-                        window.location = '../login.php';
+                        window.location = '../index.php';
                         </script>";
                     }
                     ?>

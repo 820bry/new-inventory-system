@@ -18,7 +18,7 @@ if(empty($name) || empty($quantity)) {
     </script>";
     return;
 } else {
-    $sql = "INSERT INTO inventory(ItemName, ItemID, ItemQuantity, UserRegistered, DateRegistered)
+    $sql = "INSERT INTO peralatan(NamaAset, IDAset, BilAset, DidaftarOleh, DidaftarPada)
         VALUES('$name', '".getNextId($con)."', '$quantity', '".$_GET['session']."', '$curr_date')";
     $result = mysqli_query($con, $sql);
     if($result) {
@@ -34,11 +34,11 @@ if(empty($name) || empty($quantity)) {
 }
 
 function getNextId($con) {
-    $sql = "SELECT ItemID FROM inventory ORDER BY ItemID DESC LIMIT 1";
+    $sql = "SELECT IDAset FROM peralatan ORDER BY IDAset DESC LIMIT 1";
     $result = mysqli_query($con, $sql);
     
     while($row = $result->fetch_assoc()) {
-        $curr_id = $row['ItemID'];
+        $curr_id = $row['IDAset'];
     }
 
     return "A".sprintf("%03d",(int)str_replace("A", "", $curr_id) + 1);

@@ -7,16 +7,16 @@ require_once('../dbcon.php');
 
 $rid = $_GET['ReportID'];
 
-$sql = "SELECT * FROM damage WHERE ReportID = '$rid'";
+$sql = "SELECT * FROM kerosakan WHERE IDLaporan = '$rid'";
 $result = mysqli_query($con, $sql);
 
 if($result) {
     while($row = $result->fetch_assoc()) {
-        $title = $row['ReportTitle'];
-        $desc = $row['ReportDesc'];
-        $quantity = $row['DamageQuantity'];
-        $itemid = $row['DamageItem'];
-        $uid = $row['ReportedBy'];
+        $title = $row['TajukLaporan'];
+        $desc = $row['Keterangan'];
+        $quantity = $row['BilRosak'];
+        $itemid = $row['AsetRosak'];
+        $uid = $row['DilaporOleh'];
     }
 } else {
     echo "<script>
@@ -26,12 +26,12 @@ if($result) {
 }
 
 function getUser($con, $uid) {
-    $sql = "SELECT UserName FROM users WHERE UserID = '$uid'";
+    $sql = "SELECT Nama FROM pengguna WHERE IDPengguna = '$uid'";
     $result = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($result) != 0) {
         while($row = $result->fetch_assoc()) {
-            return $row['UserName'];
+            return $row['Nama'];
         }
     } else {
         // failed to find username
@@ -40,12 +40,12 @@ function getUser($con, $uid) {
 }
 
 function getItemName($con, $itemid) {
-    $sql = "SELECT * FROM inventory WHERE ItemID = '$itemid'";
+    $sql = "SELECT NamaAset FROM peralatan WHERE IDAset = '$itemid'";
     $result = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($result) != 0) {
         while($row = $result->fetch_assoc()) {
-            return $row['ItemName'];
+            return $row['NamaAset'];
         }
     } else {
         return "Item not found.";

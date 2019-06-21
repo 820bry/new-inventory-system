@@ -14,13 +14,13 @@ if($_FILES['import_file']['size'] > 0) {
     while(!feof($file)) {
         $data = fgetcsv($file, '0');
 
-        $sql = "SELECT * FROM inventory WHERE ItemID = '$data[1]'";
+        $sql = "SELECT * FROM peralatan WHERE IDAset = '$data[1]'";
         $result = mysqli_query($con, $sql);
 
         if(mysqli_num_rows($result) === 0) {
             // to prevent it from importing empty datasets
             if(!empty($data[1])) {
-                $insert = "INSERT INTO inventory(ItemName, ItemID, ItemQuantity, UserRegistered, DateRegistered)
+                $insert = "INSERT INTO peralatan(NamaAset, IDAset, BilAset, DidaftarOleh, DidaftarPada)
                         VALUES('$data[0]', '$data[1]', '$data[2]', '$session', '$curr_date')";
 
                 mysqli_query($con, $insert);
