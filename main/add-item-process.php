@@ -34,10 +34,9 @@ if(empty($name) || empty($quantity)) {
 }
 
 function getNextId($con) {
-    $sql = "SELECT * FROM inventory";
+    $sql = "SELECT ItemID FROM inventory ORDER BY ItemID DESC";
     $result = mysqli_query($con, $sql);
-
-    return "A".sprintf("%03d", mysqli_num_rows($result) + 1);
+    
 }
 
 ?>

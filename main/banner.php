@@ -41,7 +41,6 @@
             </div>
             <br>
             <ul class="navbar">
-                <!-- Just placeholders -->
                 <li><a href="../main/main.php?session=<?php echo $_GET['session']; ?>">Main Page</a></li>
                 <li><a href="../main/inventory.php?session=<?php echo $_GET['session']; ?>">Inventory</a></li>
                 <li><a href="../main/import.php?session=<?php echo $_GET['session']; ?>">Import Data</a></li>
