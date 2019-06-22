@@ -34,9 +34,13 @@ if(empty($_GET['session'])) {
 }
 
 function getNextId($con) {
-    $sql = "SELECT * FROM kerosakan";
+    $sql = "SELECT IDLaporan FROM kerosakan ORDER BY IDLaporan DESC LIMIT 1";
     $result = mysqli_query($con, $sql);
 
-    return "R".sprintf("%03d", mysqli_num_rows($result) + 1);
+    while($row = $result->fetch_assoc()) {
+        $curr_id = $row['IDLaporan'];
+    }
+
+    return "R".sprintf("%03d", (int)str_replace("R", "", $curr_id) + 1);
 }
 ?>

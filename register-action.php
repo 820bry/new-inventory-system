@@ -1,11 +1,6 @@
 <?php
 require_once('dbcon.php');
 
-$query = "SELECT * FROM pengguna";
-$get_users = mysqli_query($con, $query);
-
-$next_id = "ICRZ".sprintf("%03d", mysqli_num_rows($get_users) + 1);
-
 $name = $_POST['student_name'];
 $id = $_POST['student_id'];
 $password = $_POST['password'];
@@ -25,7 +20,7 @@ if(empty($name) || empty($id) || empty($password) || empty($password2)) {
     return;
 } else {
     $sql = "INSERT INTO pengguna(Nama, IDSekolah, IDPengguna, KataLaluan)
-        VALUES('$name', '$id', '$next_id', '$password')";
+        VALUES('$name', '$id', '".getNextId($con)."', '$password')";
     $result = mysqli_query($con, $sql);
 
     if($result) {
@@ -37,6 +32,17 @@ if(empty($name) || empty($id) || empty($password) || empty($password2)) {
         window.alert('Failed to register');
         window.history.back();
         </script>";
+    }
+}
+
+function getNextId($con) {
+    $sql = "SELECT IDPengguna FROM pengguna ORDER BY IDPengguna DESC LIMIT 1";
+    $result = mysqli_query($con, $sql);
+
+    while($row = $result->fetch_assoc()) {
+        $curr_id = $row['IDPengguna'];
+
+        return "ICRZ".sprintf("%03d", (int)str_replace("ICRZ", "", $curr_id) + 1);
     }
 }
 
