@@ -56,7 +56,7 @@ function getItemName($con, $itemid) {
 
 <html>
     <head>
-        <title>View Report | Inventory System</title>
+        <title>Laporan Aset | Sistem Pengurusan Peralatan Bilik i-CreatorZ</title>
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">
@@ -64,33 +64,34 @@ function getItemName($con, $itemid) {
     </head>
     <body>
         <div class="page-content">
+            <a href="../inventory/inventory.php?session=<?php echo $_GET['session']; ?>">Kembali ke Halaman Inventori</a>
             <div id="report-data">
-                <h2>Inventory > View Report</h2>
+                <h2>Inventori > Laporan Aset</h2>
                 <table class="report-table">
                     <tr>
-                        <th>Report Title</th>
+                        <th>Tajuk Laporan</th>
                         <td><?php echo $title; ?></td>
                     </tr>
                     <tr>
-                        <th>Reported By</th>
+                        <th>Dilaporkan Oleh</th>
                         <td><?php echo getUser($con, $uid)." [ ".$uid." ]"; ?></td>
                     </tr>
                     <tr>
-                        <th>Report Description</th>
+                        <th>Keterangan Laporan</th>
                         <td><?php echo $desc; ?> </td>
                     </tr>
                     <tr>
-                        <th>Affected Item</th>
+                        <th>Aset Terjejas</th>
                         <td><?php echo getItemName($con, $itemid)." [ ".$itemid." ] "; ?></td>
                     </tr>
                     <tr>
-                        <th>Affected Amount</th>
+                        <th>Bilangan Terjejas</th>
                         <td><?php echo $quantity; ?></td>
                     </tr>
                 </table>
             </div>
             <br>
-            <button class="btn-print" id="btn-print">Print Report</button>
+            <button class="btn-print" id="btn-print">Mencetak Laporan</button>
         </div>
     </body>
     <script>

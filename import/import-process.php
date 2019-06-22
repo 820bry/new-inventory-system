@@ -26,7 +26,7 @@ if($_FILES['import_file']['size'] > 0) {
                 mysqli_query($con, $insert);
 
                 echo "<script>
-                window.alert('Successfully imported data');
+                window.alert('Berjaya mengimport data!');
                 window.location = '../inventory/inventory.php?session=".$session."';
                 </script>";
             }
@@ -35,7 +35,7 @@ if($_FILES['import_file']['size'] > 0) {
     fclose($file);
 } else {
     echo "<script>
-    window.alert('Failed to import data.');
+    window.alert('Gagal mengimport data.');
     window.history.back();
     </script>";
 }

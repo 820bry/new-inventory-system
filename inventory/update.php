@@ -4,7 +4,7 @@ include('../banner.php');
 
 <html>
     <head>
-        <title>Update Item | Inventory System</title>
+        <title>Kemaskini Aset | Sistem Pengurusan Peralatan Bilik i-CreatorZ</title>
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">
@@ -12,7 +12,8 @@ include('../banner.php');
     </head>
     <body>
         <div class="page-content">
-            <h2>Inventory > Update Item Data</h2>
+            <a href="inventory.php?session=<?php echo $_GET['session']; ?>">Kembali ke Halaman Inventori</a>
+            <h2>Inventori > Kemaskini Data Aset</h2>
             <?php
             require_once('../dbcon.php');
 
@@ -35,13 +36,13 @@ include('../banner.php');
             }
             ?>
             <form class="update-item-form" action="update-item-process.php?session=<?php echo $_GET['session'] ?>&ItemID=<?php echo $_GET['ItemID'] ?>" method="post">
-                <label for="update-name">Item Name</label>
-                <input type="text" id="update-name" name="item_name" placeholder="Enter a Name" value="<?php echo $name; ?>" maxlength="25">
+                <label for="update-name">Nama Aset</label>
+                <input type="text" id="update-name" name="item_name" placeholder="Masukkan Nama" value="<?php echo $name; ?>" maxlength="25">
 
-                <label for="update-quantity">Quantity</label>
+                <label for="update-quantity">Bilangan</label>
                 <input type="number" id="update-quantity" name="item_quantity" step="1" value="<?php echo $quantity; ?>" min="1" max="999">
 
-                <input type="submit" value="Update">
+                <input type="submit" value="Kemaskini Aset">
             </form>
         </div>
     </body>

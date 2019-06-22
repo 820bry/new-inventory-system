@@ -13,11 +13,11 @@
         <div class="banner-content">
             <div class="title">
                 <img src="../styling/Images/logoblack.png" alt="logo-bw" width="50px" height="50px">
-                <span>i-CreatorZ Inventory System</span>
+                <span>Sistem Pengurusan Peralatan @ Bilik i-CreatorZ</span>
             </div>
             <div class="subtitle-text">
                 <span>
-                    Logged in as: 
+                    Log Masuk Sebagai: 
                     <?php
                     require_once('dbcon.php');
 
@@ -41,11 +41,11 @@
             </div>
             <br>
             <ul class="navbar">
-                <li><a href="../main/main.php?session=<?php echo $_GET['session']; ?>">Main Page</a></li>
-                <li><a href="../inventory/inventory.php?session=<?php echo $_GET['session']; ?>">Inventory</a></li>
+                <li><a href="../main/main.php?session=<?php echo $_GET['session']; ?>">Halaman Utama</a></li>
+                <li><a href="../inventory/inventory.php?session=<?php echo $_GET['session']; ?>">Inventori</a></li>
                 <li><a href="../import/import.php?session=<?php echo $_GET['session']; ?>">Import Data</a></li>
-                <li><a href="../report/report.php?session=<?php echo $_GET['session']; ?>">Report Item</a></li>
-                <li style="float: right"><a href="../index.php">Logout</a></li>
+                <li><a href="../report/report.php?session=<?php echo $_GET['session']; ?>">Lapor Masalah Aset</a></li>
+                <li style="float: right"><a href="../index.php">Log Keluar</a></li>
             </ul>
         </div>
     </body>

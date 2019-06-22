@@ -13,13 +13,13 @@ $sql = "UPDATE peralatan
 
 if(empty($name) || empty($quantity)) {
     echo "<script>
-    window.alert('Please complete the form');
+    window.alert('Sila isikan borang!');
     window.history.back();
     </script>";
     return;
 } else if($quantity <= 0 || $quantity >= 1000) {
     echo "<script>
-    window.alert('Invalid number supplied');
+    window.alert('Bilangan aset hanya boleh di antara 1 dan 999!');
     window.history.back();
     </script>";
     return;
@@ -32,7 +32,7 @@ if(empty($name) || empty($quantity)) {
         </script>";
     } else {
         echo "<script>
-        window.alert('Failed to update item info');
+        window.alert('Gagal mengemaskini data aset.');
         window.history.back();
         </script>";
     }

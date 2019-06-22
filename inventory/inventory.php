@@ -3,7 +3,7 @@ include('../banner.php');
 ?>
 <html>
     <head>
-        <title>Inventory | Inventory System</title>
+        <title>Inventori | Sistem Pengurusan Peralatan Bilik i-CreatorZ</title>
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">
@@ -13,37 +13,37 @@ include('../banner.php');
         <div id="popup-window" class="add-item-window">
             <div class="add-item-content">
                 <span class="btn-close">&times;</span>
-                <h2>Add New Item into Inventory</h2>
+                <h2>Daftar Aset Baru</h2>
                 <form class="add-item-form" action="add-item-process.php?session=<?php echo $_GET['session']; ?>" method="post">
-                    <label for="add-name">Enter a name</label>
-                    <input type="text" id="add-name" name="item_name" placeholder="Item Name" maxlength="25">
+                    <label for="add-name">Masukkan Nama Aset</label>
+                    <input type="text" id="add-name" name="item_name" placeholder="Nama Aset" maxlength="25">
 
-                    <label for="add-quantity">Enter the quantity</label>
+                    <label for="add-quantity">Masukkan Bilangan Aset</label>
                     <input type="number" id="add-quantity" name="item_quantity" step="1" value="1" min="1" max="999">
 
-                    <input type="submit" value="Add Item">
+                    <input type="submit" value="Daftar Aset">
                 </form>
             </div>
         </div>
     
         <div class="page-content">
-            <h2>Inventory</h2>
-            <input type="text" id="search-bar" name="search_bar" class="search" placeholder="Enter Search Term">
+            <h2>Inventori</h2>
+            <input type="text" id="search-bar" name="search_bar" class="search" placeholder="Cari Aset">
             <button id ="btn-search" class="btn-search" onclick="search()">&#128270</button>
-            <button id="btn-add" class="btn-add">Add Item</button>
+            <button id="btn-add" class="btn-add">Daftar Aset</button>
             <table class="inventory-listing">
                 <?php
                 require_once('../dbcon.php');
 
                 echo "
                     <tr>
-                        <th width=\"8%\">Item ID</th>
-                        <th width=\"25%\">Name</th>
-                        <th width=\"5%\">Quantity</th>
-                        <th width=\"25%\">Reports</th>
-                        <th width=\"15%\">Registered By</th>
-                        <th width=\"10%\">Added On</th>
-                        <th width=\"10%\">Manage</th>
+                        <th width=\"8%\">ID Aset</th>
+                        <th width=\"25%\">Nama</th>
+                        <th width=\"8%\">Bilangan</th>
+                        <th width=\"25%\">Laporan & Masalah Aset</th>
+                        <th width=\"15%\">Didaftar Oleh</th>
+                        <th width=\"10%\">Didaftar Pada</th>
+                        <th width=\"10%\">Urusan</th>
                     </tr>";
 
                 $sql = "SELECT * FROM peralatan";
@@ -62,13 +62,13 @@ include('../banner.php');
                             <td>".getUsername($row['DidaftarOleh'], $con)."</td>
                             <td>".$row['DidaftarPada']."</td>
                             <td>
-                                <button onclick=\"window.location = 'update.php?session=".$_GET['session']."&ItemID=".$row['IDAset']."'\"'>Update Item</button>
-                                <button onclick=\"confirmDelete('".$row['IDAset']."');\">Delete Item</button>
+                                <button onclick=\"window.location = 'update.php?session=".$_GET['session']."&ItemID=".$row['IDAset']."'\"'>Kemaskini</button>
+                                <button onclick=\"confirmDelete('".$row['IDAset']."');\">Hapus Aset</button>
                             </td>
                         <tr>";
                     }
                 } else {
-                    echo "Error in fetching inventory data";
+                    echo "Terdapat Masalah Semasa Mengambil Data Inventori";
                 }
 
                 function getUsername($id, $con) {
@@ -80,7 +80,7 @@ include('../banner.php');
                             return $row['Nama'];
                         }
                     } else {
-                        return "Invalid Username";
+                        return "Pengguna Tidak Wujud";
                     }
                 }
 
@@ -94,7 +94,7 @@ include('../banner.php');
                         }
                     } else {
                         // no reports
-                        echo "No reports.";
+                        echo "Tiada Laporan atau Masalah.";
                     }
                 }
                 ?>
@@ -105,7 +105,7 @@ include('../banner.php');
     <script src="inventory.js"></script>
     <script>
         function confirmDelete(id) {
-            if(confirm("Are you sure you want to delete this item?")) {
+            if(confirm("Adakah anda pasti hendak menghapuskan semua rekod aset ini?")) {
                 window.location = 'del-item-process.php?session=<?php echo $_GET['session'] ?>&ItemID=' + id;
             } else {
                 // do nothing
@@ -116,7 +116,7 @@ include('../banner.php');
             var query = document.getElementById("search-bar").value;
 
             if(query === "" || query.trim().length == 0) {
-                window.alert('Please type a search query!');
+                window.alert('Sila masukkan kata pencarian!');
             } else {
                 window.location = 'search.php?session=<?php echo $_GET['session']; ?>&query='+query;
             }

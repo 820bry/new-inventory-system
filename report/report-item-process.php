@@ -15,7 +15,7 @@ if(empty($_GET['session'])) {
     </script>";
 } else if(empty($id) || empty($title) || empty($desc) || empty($quantity)) {
     echo "<script>
-    window.alert('Please fill in the form');
+    window.alert('Sila isikan borang!');
     window.location = 'report.php?session=".$_GET['session']."';
     </script>";
 } else {
@@ -27,7 +27,7 @@ if(empty($_GET['session'])) {
         </script>";
     } else {
         echo "<script>
-        window.alert('Failed to add report');
+        window.alert('Gagal membuat laporan.');
         window.history.back();
         </script>";
     }

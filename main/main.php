@@ -4,7 +4,7 @@ include('../banner.php');
 
 <html>
     <head>
-        <title>Main Page | Inventory System</title>
+        <title>Halaman Utama | Sistem Pengurusan Peralatan Bilik i-CreatorZ</title>
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../styling/main.css">

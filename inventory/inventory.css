@@ -9,8 +9,8 @@
     vertical-align: middle;
 }
 
-.btn-add, .btn-import {
-    width: 110px;
+.btn-add {
+    width: 130px;
     height: 40px;
     font-size: 15px;
     font-family: Product Sans;
@@ -35,11 +35,7 @@
     cursor: pointer;
 }
 
-.btn-import {
-    width: 160px;
-}
-
-.btn-add:hover, .btn-search:hover, .btn-import:hover {
+.btn-add:hover, .btn-search:hover {
     background-color: lightgray;
 }
 

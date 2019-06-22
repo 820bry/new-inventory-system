@@ -16,7 +16,7 @@ if($result) {
 } else {  
     // item doesn't exist
     echo "<script>
-    window.alert('Failed to delete item');
+    window.alert('Gagal menghapuskan aset.');
     window.history.back();
     </script>";
 }
