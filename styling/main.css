@@ -4,3 +4,68 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.introduction {
+    margin-left: 40px;
+    width: 55%;
+}
+
+.introduction h3 {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.introduction p {
+    padding-left: 8%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.interests {
+    text-align: center;
+}
+
+.interests .number {
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.interests .text {
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+.section {
+    padding: 15px 15px 10px 15px;
+    border-radius: 10px;
+    display: inline;
+    transition: 0.2s;
+}
+
+.section:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+
+.timeline {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline h3 {
+    font-size: 24px;
+}
+
+.timeline .year {
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.timeline .desc {
+    padding-left: 50px;
+    font-size: 17px;
+}

@@ -12,6 +12,7 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 30px;
+    margin-left: 10px;
 }
 
 .subtitle-text span {
