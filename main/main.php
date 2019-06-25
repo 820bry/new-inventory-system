@@ -13,7 +13,11 @@ include('../banner.php');
     </head>
     <body>
         <div class="page-content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h2>Tentang Kelab i-CreatorZ</h2>
+            <p>
+            Kelab i-CreatorZ ditubuhkan pada tahun 2018 dengan tujuan untuk melahirkan pelajar generasi<br>
+            akan datang dengan minda kreatif
+            </p>
         </div>
     </body>
 </html>
