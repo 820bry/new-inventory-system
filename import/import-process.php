@@ -18,7 +18,7 @@ if($_FILES['import_file']['size'] > 0) {
         $result = mysqli_query($con, $sql);
 
         if(mysqli_num_rows($result) === 0) {
-            // to prevent it from importing empty datasets
+            // Untuk elakkan mengimport data yang kosong
             if(!empty($data[1])) {
                 $insert = "INSERT INTO peralatan(NamaAset, IDAset, BilAset, DidaftarOleh, DidaftarPada)
                         VALUES('$data[0]', '$data[1]', '$data[2]', '$session', '$curr_date')";

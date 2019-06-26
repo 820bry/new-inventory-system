@@ -56,6 +56,11 @@
 }
 
 .timeline h3 {
+    text-align: center;
+    padding: 5px 0 5px 0;
+    background-color: #000;
+    color: white;
+    border-radius: 10px;
     font-size: 24px;
 }
 
@@ -66,6 +71,7 @@
 }
 
 .timeline .desc {
+    font-weight: bold;
     padding-left: 50px;
     font-size: 17px;
 }

@@ -80,7 +80,7 @@ if(!isset($_GET['query']) || empty($query)) {
                             echo "<li><a href=\"view-report.php?session=".$_GET['session']."&ReportID=".$row['IDLaporan']."\">".$row['TajukLaporan']."</li>";
                         }
                     } else {
-                        // no reports
+                        // Tiada laporan
                         echo "Tiada Laporan atau Masalah.";
                     }
                 }
@@ -93,7 +93,7 @@ if(!isset($_GET['query']) || empty($query)) {
             if(confirm("Adakah anda pasti hendak menghapuskan semua rekod aset ini?")) {
                 window.location = 'del-item-process.php?session=<?php echo $_GET['session'] ?>&ItemID=' + id;
             } else {
-                // do nothing
+                // Tidak perlu buat apa-apa
             }
         }
 

@@ -34,7 +34,7 @@ function getUser($con, $uid) {
             return $row['Nama'];
         }
     } else {
-        // failed to find username
+        // Pengguna tidak wujud
         return "User reported not found.";
     }
 }

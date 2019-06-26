@@ -29,7 +29,7 @@ include('../banner.php');
                     $quantity = $row['BilAset'];
                 }
             } else {
-                // ID is empty or something went wrong
+                // ID tidak wujud
                 echo "<script>
                 window.location = 'inventory.php?session=$id';
                 </script>";
