@@ -8,13 +8,13 @@ $password2 = $_POST['password_confirm'];
 
 if(empty($name) || empty($id) || empty($password) || empty($password2)) {
     echo "<script>
-    window.alert('Fill in the form');
+    window.alert('Sila mengisi borang!');
     window.history.back();
     </script>";
     return;
 } else if($password != $password2) {
     echo "<script>
-    window.alert('Passwords do not match');
+    window.alert('Kata Laluan tidak sama.');
     window.history.back();
     </script>";
     return;
@@ -25,11 +25,12 @@ if(empty($name) || empty($id) || empty($password) || empty($password2)) {
 
     if($result) {
         echo "<script>
+        window.alert('Berjaya mendaftar sebagai pengguna baru!');
         window.location = 'index.php';
         </script>";
     } else {
         echo "<script>
-        window.alert('Failed to register');
+        window.alert('Gagal mendaftar pengguna.');
         window.history.back();
         </script>";
     }

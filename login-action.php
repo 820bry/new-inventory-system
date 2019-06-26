@@ -14,7 +14,7 @@ if(mysqli_num_rows($result) != 0) {
     </script>";
 } else {
     echo "<script>
-    window.alert('Login failed');
+    window.alert('Login gagal');
     window.history.back();
     </script>";
 }
@@ -29,7 +29,7 @@ function getSessionId($id, $con) {
             return $row['IDPengguna'];
         }
     } else {
-        // something went wrong here...
+        // tidak mendapati ID Pengguna
     }
 }
 
